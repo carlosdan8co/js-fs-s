@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://js-fs-s/frontend/styles/styles.css"],"names":[],"mappings":"AAAA;IACI,iBAAiB;IACjB,YAAY;AAChB,C","file":"css/bundle.css","sourcesContent":["body{\r\n    background: green;\r\n    color: white;\r\n}"],"sourceRoot":""}
