@@ -1,5 +1,24 @@
 const router=require('express').Router();
 
-router.get('/',(req,res)=>{res.send('Hello World!')});
+const Book=require('../models/Book');
+
+router.get('/',async (req,res)=>{
+    console.log(Book);
+    const books = await Book.find();
+    res.json(books);
+});
+
+router.post('/',async(req,res)=>{
+    const {title, author, isbn}=req.body;
+    const newBook = new Book({title, author, isbn});
+    await newBook.save();
+    res.json({message:'Book Saved'});
+});
+
+router.delete('/:id',async(req,res)=>{
+    const book = await Book.findByIdAndDelete(req.params.id);
+    console.log(book);
+    res.json({message:'Book Deleted'});
+})
 
 module.exports=router;
