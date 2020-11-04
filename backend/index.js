@@ -1,14 +1,18 @@
+require('dotenv').config();
+console.log(process.env.NODE_ENV);
+
 const express = require('express');
 const morgan = require('morgan');
 const multer = require('multer');
 const path = require('path');
+
 
 //Initializations
 const app= express();
 require('./database');
 
 //settings
-app.set('port',3000);
+app.set('port',process.env.PORT||3000);
 
 //Middlewares
 app.use(morgan('dev'));

@@ -1,6 +1,7 @@
 const mongoose= require('mongoose');
 
-mongoose.connect('mongodb://localhost/jsdb',{
+
+mongoose.connect(process.env.MONGODB_URI,{
     useUnifiedTopology: true,
     useNewUrlParser:true
 })
