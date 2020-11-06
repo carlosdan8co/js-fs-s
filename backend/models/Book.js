@@ -6,7 +6,7 @@ const BookSchema=new Schema({
     author:{type:String,required:true},
     isbn:{type:String,required:true},
     imagePath:{type:String,required:false},
-    created_at:{type:Date,default:Date.now()}
+    created_at:{type:Date,default:Date.now}
 });
 
 module.exports=model('Book',BookSchema);
