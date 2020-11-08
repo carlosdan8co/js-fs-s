@@ -13,9 +13,9 @@ class UI{
             div.className='';
             div.innerHTML=`
                 <div class="card m-2">
-                    <div class="row">
+                    <div class="row no-gutters">
                         <div class="col-md-4">
-                            <img src="${books.imagePath}" alt="" class="img-fluid"/>
+                            <img src="${books.imagePath}" alt="" class="img-fluid">
                         </div>
                         <div class="col-md-8">
                             <div class="card-block px-2">
@@ -24,9 +24,9 @@ class UI{
                                 <a href="#" class="btn btn-danger delete" _id="${books._id}">X</a>
                             </div>
                         </div>
-                        <div class="card-footer">
-                                ${format(books.created_at)}
-                        </div>
+                    </div>
+                    <div class="card-footer w-100 text-muted">
+                        ${format(books.created_at)}
                     </div>
                 </div>
             `;
