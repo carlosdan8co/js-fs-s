@@ -21,7 +21,7 @@ class UI{
                             <div class="card-block px-2">
                                 <h4 class="card-title">${books.title}</h4>
                                 <p class="card-text">${books.author}</p>
-                                <a href="#" class="btn btn-danger delete" _id="${books._id}"></a>
+                                <a href="#" class="btn btn-danger delete" _id="${books._id}">X</a>
                             </div>
                             <div class="card-footer">
                                 ${format(books.created_at)}
@@ -44,8 +44,24 @@ class UI{
         document.getElementById('book-form').reset();
     }
 
-    renderMessage(){
+    renderMessage(message,colorMessage,secondsToRemove){
+        const div=document.createElement('div');
+        div.className=`alert alert-${colorMessage} message`;
+        div.appendChild(document.createTextNode(message))    
 
+        const container =document.querySelector('.col-md-4');
+        const bookForm = document.querySelector('#book-form');
+        container.insertBefore(div,bookForm);
+
+        setTimeout(()=>{
+            document.querySelector('.message').remove();
+        },secondsToRemove)
+        console.log('messageR');
+    }
+
+    async deleteBook(bookId){
+        await bookService.deleteBook(bookId)
+        this.renderBooks();
     }
 } 
 
