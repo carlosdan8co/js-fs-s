@@ -23,9 +23,9 @@ class UI{
                                 <p class="card-text">${books.author}</p>
                                 <a href="#" class="btn btn-danger delete" _id="${books._id}">X</a>
                             </div>
-                            <div class="card-footer">
+                        </div>
+                        <div class="card-footer">
                                 ${format(books.created_at)}
-                            </div>
                         </div>
                     </div>
                 </div>
