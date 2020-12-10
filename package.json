@@ -8,12 +8,13 @@
     "start": "node backend/index.js",
     "postinstall": "npm run build",
     "build": "NODE_ENV=production webpack",
-    "server:dev":"webpack serve"
+    "server:dev": "webpack serve"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cloudinary": "^1.23.0",
     "cors": "^2.8.5",
     "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",

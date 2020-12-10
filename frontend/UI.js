@@ -9,6 +9,7 @@ class UI{
         booksCardContainer.innerHTML='';
         console.log(books)
         books.forEach(books => {
+            console.log(books.imagePath);
             const div=document.createElement('div');
             div.className='';
             div.innerHTML=`
